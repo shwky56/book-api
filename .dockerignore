@@ -1,0 +1,12 @@
+
+# ndoe moduel
+/node*
+
+
+# server*.env
+*.env
+
+/upload
+*.git
+
+*.gitignore

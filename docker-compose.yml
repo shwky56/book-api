@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:3000"
+    environment:
+      - SHWKY="shwky"
+      - HOST=book-database
+      - DB_PORT=3336
+      - USER='shwky'
+      - PASSWORD='shwky'
+      - DATABASE='BOOK'
+      - PORT=8000
+        # secret key for dev
+      - SECRET="706fa7299d09ef97c869a2ef11e34a"

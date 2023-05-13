@@ -1,0 +1,590 @@
+openapi: 3.0.0
+info:
+  title: Book Platform
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+tags:
+  - name: Rest Auth
+  - name: Book
+  - name: Chapter
+  - name: Request
+  - name: Search
+  - name: User
+paths:
+  /rest-auth/signup:
+    post:
+      tags:
+        - Rest Auth
+      summary: suinup
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: 3@gcc.ccc
+                password: 1@Dddddd
+                confirmPassword: 1@Dddddd
+                phone: '01111111'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /rest-auth/signin:
+    post:
+      tags:
+        - Rest Auth
+      summary: suinin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: 3@gcc.ccc
+                password: 1@Dddddd
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/book:
+    get:
+      tags:
+        - Book
+      summary: List Book
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Book
+      summary: Add Book
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                pdf:
+                  type: string
+                  format: binary
+                poster:
+                  type: string
+                  format: binary
+                data:
+                  type: string
+                  example: |-
+                    {
+                        "name": "dado",
+                        "description": "dado is book for nutheng and bad contant i cant speck englich ",
+                        "author": "anun user",
+                        "field": "hestory",
+                        "publication_date": "2023-04-09"
+                    }
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          description: admin
+          example: >-
+            admin
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/book/2:
+    get:
+      tags:
+        - Book
+      summary: Book Details
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/book/63/chapter:
+    get:
+      tags:
+        - Book
+      summary: Book Whith Chapter
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            user
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /book/pdf/63:
+    get:
+      tags:
+        - Book
+      summary: PDF For Book
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            admin
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /book/img/63:
+    get:
+      tags:
+        - Book
+      summary: Imge For Book
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            user
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/book/search:
+    get:
+      tags:
+        - Book
+      summary: Book By Shearch
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            user
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg
+        - name: name
+          in: query
+          schema:
+            type: string
+          example: s
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/book/filter:
+    get:
+      tags:
+        - Book
+      summary: Book By Filter
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            user
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg
+        - name: 'n'
+          in: query
+          schema:
+            type: string
+          example: s
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/book/63:
+    put:
+      tags:
+        - Book
+      summary: Update Book
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                pdf:
+                  type: string
+                  format: binary
+                poster:
+                  type: string
+                  format: binary
+                data:
+                  type: string
+                  example: |-
+                    {
+                        "name": "d ado",
+                        "description": "dado is book for nutheng and bad contant i cant speck englich ",
+                        "author": "anun user",
+                        "field": "hestory",
+                        "publication_date": "2023-04-09"
+                    }
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          description: admin
+          example: >-
+            admin
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/book/1:
+    delete:
+      tags:
+        - Book
+      summary: Delete Book
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          description: admin
+          example: >-
+            admin
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/chapter:
+    post:
+      tags:
+        - Chapter
+      summary: Add Chapter
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                book_id: 61
+                title: sdf
+                description: sdfsfsfsdfsdfsdf
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          description: admin
+          example: >-
+            admin
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/chapter/4:
+    put:
+      tags:
+        - Chapter
+      summary: Update Chapter
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                book_id: 61
+                title: sdf
+                description: sdfsfsfsdfsdfsdf
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          description: admin
+          example: >-
+            admin
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/chapter/6:
+    delete:
+      tags:
+        - Chapter
+      summary: Delete Chapter
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          description: admin
+          example: >-
+            admin
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/request:
+    get:
+      tags:
+        - Request
+      summary: List Request
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            user
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/request/filter:
+    get:
+      tags:
+        - Request
+      summary: Request as castem filter
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            user
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg
+        - name: user_id
+          in: query
+          schema:
+            type: integer
+          example: '33'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/request/:
+    post:
+      tags:
+        - Request
+      summary: Add New Request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                book_id: 67
+                user_id: 31
+                status: pending
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            admin
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/request/20:
+    put:
+      tags:
+        - Request
+      summary: Update Request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                status: accept
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            user
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Request
+      summary: Update Request Copy
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            admin
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/search/filter:
+    get:
+      tags:
+        - Search
+      summary: get search for user
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            admin
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8
+        - name: user_id
+          in: query
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/user:
+    get:
+      tags:
+        - User
+      summary: List User
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            user
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/user/36:
+    get:
+      tags:
+        - User
+      summary: User Detael
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            user
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - User
+      summary: Update Request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: sd@gcc.ccc
+                password: '123'
+                status: active
+                type: admin
+                phone: '01111111'
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            admin
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - User
+      summary: Update Request Copy
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            admin
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/user/:
+    post:
+      tags:
+        - User
+      summary: Add New User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: sd@gcc.ccc
+                password: '123'
+                status: active
+                type: reader
+                phone: '01111111'
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            admin
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

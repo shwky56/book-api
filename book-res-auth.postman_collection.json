@@ -1,0 +1,1012 @@
+{
+	"info": {
+		"_postman_id": "e8061b23-2bee-4724-94a9-f5eace555bff",
+		"name": "book-res-auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27279943"
+	},
+	"item": [
+		{
+			"name": "Rest Auth",
+			"item": [
+				{
+					"name": "suinup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"3@gcc.ccc\",\n    \"password\": \"1@Dddddd\",\n    \"confirmPassword\": \"1@Dddddd\",\n    \"phone\": \"01111111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/rest-auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"rest-auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "suinin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"email\": \"3@gcc.ccc\",\n    \"password\": \"1@Dddddd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/rest-auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"rest-auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "List Book",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/book/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"book",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book Whith Chapter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/book/63/chapter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"book",
+								"63",
+								"chapter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PDF For Book",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/book/pdf/63",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"book",
+								"pdf",
+								"63"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Imge For Book",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/book/img/63",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"book",
+								"img",
+								"63"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book By Shearch",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/book/search?name=s",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"book",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "s"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book By Filter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/book/filter?n=s",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"book",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "n",
+									"value": "s"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"description": "user",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pdf",
+									"type": "file",
+									"src": "/home/shwky/Desktop/wireshark-dhcp-v70-solution.pdf"
+								},
+								{
+									"key": "poster",
+									"type": "file",
+									"src": "/home/shwky/Desktop/images/fantasticbeats.jpg"
+								},
+								{
+									"key": "data",
+									"value": "{\n    \"name\": \"dado\",\n    \"description\": \"dado is book for nutheng and bad contant i cant speck englich \",\n    \"author\": \"anun user\",\n    \"field\": \"hestory\",\n    \"publication_date\": \"2023-04-09\"\n}",
+									"contentType": "application/json",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"description": "user",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pdf",
+									"type": "file",
+									"src": "/home/shwky/Desktop/wireshark-dhcp-v70-solution.pdf"
+								},
+								{
+									"key": "poster",
+									"type": "file",
+									"src": "/home/shwky/Desktop/images/fantasticbeats.jpg"
+								},
+								{
+									"key": "data",
+									"value": "{\n    \"name\": \"d ado\",\n    \"description\": \"dado is book for nutheng and bad contant i cant speck englich \",\n    \"author\": \"anun user\",\n    \"field\": \"hestory\",\n    \"publication_date\": \"2023-04-09\"\n}",
+									"contentType": "application/json",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/book/63",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"book",
+								"63"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"description": "user",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pdf",
+									"type": "file",
+									"src": "/home/shwky/Desktop/wireshark-dhcp-v70-solution.pdf"
+								},
+								{
+									"key": "poster",
+									"type": "file",
+									"src": "/home/shwky/Desktop/images/fantasticbeats.jpg"
+								},
+								{
+									"key": "data",
+									"value": "{\n    \"name\": \"dado\",\n    \"description\": \"dado is book for nutheng and bad contant i cant speck englich \",\n    \"author\": \"anun user\",\n    \"field\": \"hestory\",\n    \"publication_date\": \"2023-04-09\"\n}",
+									"contentType": "application/json",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/book/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"book",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chapter",
+			"item": [
+				{
+					"name": "Add Chapter",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"description": "user",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"book_id\": 61,\n    \"title\": \"sdf\",\n    \"description\": \"sdfsfsfsdfsdfsdf\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/chapter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"chapter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Chapter",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"description": "user",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"book_id\": 61,\n    \"title\": \"sdf\",\n    \"description\": \"sdfsfsfsdfsdfsdf\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/chapter/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"chapter",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Chapter",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"description": "user",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"book_id\": 61,\n    \"title\": \"sdf\",\n    \"description\": \"sdfsfsfsdfsdfsdf\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/chapter/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"chapter",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Request",
+			"item": [
+				{
+					"name": "List Request",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/request",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Request as castem filter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/request/filter?user_id=33",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"request",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "33"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"book_id\": 67,\n        \"user_id\": 31,\n        \"status\": \"pending\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/request/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"request",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Request",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"type": "text"
+							},
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"status\": \"accept\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/request/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"request",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Request Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"status\": \"accept\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/request/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"request",
+								"20"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "get search for user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"book_id\": 67,\n        \"user_id\": 31,\n        \"status\": \"pending\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/search/filter?user_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"search",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "List User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Detael",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/user/36",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"36"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n\n    \"email\": \"sd@gcc.ccc\",\n    \"password\": \"123\",\n    \"status\": \"active\",\n    \"type\": \"reader\",\n    \"phone\": \"01111111\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Request",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n\n    \"email\": \"sd@gcc.ccc\",\n    \"password\": \"123\",\n    \"status\": \"active\",\n    \"type\": \"admin\",\n    \"phone\": \"01111111\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user/36",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"36"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Request Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "user eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJHBWT2xYOTB0R0RFWUZ5cVhuZGI3T3VWRTBZM2FoVHFYSG9XMXlaLzhkN3hCSXYuaXVZOXQyIiwiaWQiOjMzLCJ0eXBlIjoicmVhZGVyIiwiaWF0IjoxNjgzNTY3NzQxLCJleHAiOjE2ODM3NDc3NDF9.ihZ9JRnXvDpSkOVLUsJ6b828fA7Gy84EEgsHB8CDcvg",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "authorization",
+								"value": "admin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjNAZ2NjLmNjYyIsInBhc3N3b3JkIjoiJDJhJDEyJE9iajFQYXlYTlh4bm9ra3Q3TnFyVS4yNWxqMlNxbG43akw5THRwbDI5bTFpdHZhdUJUd2ZDIiwiaWQiOjM0LCJ0eXBlIjoiYWRtaW4iLCJpYXQiOjE2ODM1Njc4NDAsImV4cCI6MTY4Mzc0Nzg0MH0.oIRrqEmZPbqc9nTVpVGIwNWXAlAVDdPBxohQ1eqLir8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"status\": \"accept\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user/36",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"36"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
